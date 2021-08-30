@@ -1,24 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19134"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jNW-l6-rVT">
+                                <rect key="frame" x="145" y="394" width="124" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivO-E6-jHc">
+                                        <rect key="frame" x="23.5" y="0.0" width="77" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <connections>
+                                            <segue destination="uur-wO-7E4" kind="presentation" identifier="GameVC" id="AwY-Rg-rOQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-U6-M5N">
+                                        <rect key="frame" x="0.0" y="67" width="124" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Результаты"/>
+                                        <connections>
+                                            <action selector="goBack" destination="dkx-z0-nzr" eventType="touchUpInside" id="yUs-jr-atk"/>
+                                            <segue destination="GYk-y7-BNy" kind="presentation" identifier="ScoreVC" id="kCu-wp-5tG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий результат:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-45-Qcl">
+                                <rect key="frame" x="20" y="819" width="374" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Web-0i-Vst"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jNW-l6-rVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5NY-gR-mag"/>
+                            <constraint firstItem="a1O-45-Qcl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7Du-6U-Bxr"/>
+                            <constraint firstItem="a1O-45-Qcl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qvr-Bf-65f"/>
+                            <constraint firstItem="jNW-l6-rVT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RwU-wb-e3b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1O-45-Qcl" secondAttribute="trailing" constant="20" id="bms-hN-if5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentResultLabel" destination="a1O-45-Qcl" id="MB1-Iz-wCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133" y="99"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="gf9-fJ-hdN">
+            <objects>
+                <viewController id="uur-wO-7E4" customClass="GameVC" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5pW-5P-VUs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Какой, по утверждению очевидцев, стала на сутки вода в Москве-реке весной 1908 года?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzX-0L-fp8">
+                                <rect key="frame" x="20" y="50" width="374" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="w49-DL-0nG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="ISI-cC-XrU">
+                                <rect key="frame" x="20" y="250" width="374" height="248"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAo-RJ-lxz">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Морской"/>
+                                        <connections>
+                                            <action selector="setQuestionButton:" destination="uur-wO-7E4" eventType="touchUpInside" id="IIX-Fo-YMs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdE-6F-n0S">
+                                        <rect key="frame" x="0.0" y="69" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Сладкой"/>
+                                        <connections>
+                                            <action selector="setQuestionButton:" destination="uur-wO-7E4" eventType="touchUpInside" id="1uA-BF-YDu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-fy-mac">
+                                        <rect key="frame" x="0.0" y="138" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Газированной"/>
+                                        <connections>
+                                            <action selector="setQuestionButton:" destination="uur-wO-7E4" eventType="touchUpInside" id="1ZO-14-oAW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apx-Sl-g6H">
+                                        <rect key="frame" x="0.0" y="207" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Дистиллированной"/>
+                                        <connections>
+                                            <action selector="setQuestionButton:" destination="uur-wO-7E4" eventType="touchUpInside" id="YUn-Lq-idq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ye3-zY-aa5"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kzX-0L-fp8" firstAttribute="top" secondItem="ye3-zY-aa5" secondAttribute="top" constant="50" id="7g6-EY-Wo5"/>
+                            <constraint firstItem="kzX-0L-fp8" firstAttribute="leading" secondItem="ye3-zY-aa5" secondAttribute="leading" constant="20" id="B8X-y2-biO"/>
+                            <constraint firstAttribute="trailing" secondItem="kzX-0L-fp8" secondAttribute="trailing" constant="20" id="FTs-Xy-YlP"/>
+                            <constraint firstItem="ISI-cC-XrU" firstAttribute="leading" secondItem="ye3-zY-aa5" secondAttribute="leading" constant="20" id="Fwo-VU-cPF"/>
+                            <constraint firstItem="ye3-zY-aa5" firstAttribute="trailing" secondItem="ISI-cC-XrU" secondAttribute="trailing" constant="20" id="HN7-RC-eu4"/>
+                            <constraint firstItem="ISI-cC-XrU" firstAttribute="top" secondItem="kzX-0L-fp8" secondAttribute="bottom" constant="40" id="P6p-Md-wsv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dPu-fF-wly"/>
+                    <connections>
+                        <outlet property="questionButtonA" destination="yAo-RJ-lxz" id="ejF-MQ-Vnz"/>
+                        <outlet property="questionButtonB" destination="jdE-6F-n0S" id="9xJ-0s-MKk"/>
+                        <outlet property="questionButtonC" destination="UKC-fy-mac" id="PKK-Wt-Lqy"/>
+                        <outlet property="questionButtonD" destination="Apx-Sl-g6H" id="6tJ-ao-U03"/>
+                        <outlet property="questionLabel" destination="kzX-0L-fp8" id="SG9-Sw-8CC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UiX-YQ-9cj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="97.767857142857139"/>
+        </scene>
+        <!--ScoreVC-->
+        <scene sceneID="NGB-1d-B9A">
+            <objects>
+                <viewController id="GYk-y7-BNy" customClass="ScoreVC" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iaU-bA-rK6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-z9-Mtq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hmh-bG-Jwh"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hmh-bG-Jwh" firstAttribute="trailing" secondItem="ndi-z9-Mtq" secondAttribute="trailing" id="5ux-Fq-uWh"/>
+                            <constraint firstItem="ndi-z9-Mtq" firstAttribute="top" secondItem="hmh-bG-Jwh" secondAttribute="top" id="8NX-n1-VPK"/>
+                            <constraint firstItem="ndi-z9-Mtq" firstAttribute="leading" secondItem="hmh-bG-Jwh" secondAttribute="leading" id="I5q-M4-Llk"/>
+                            <constraint firstItem="hmh-bG-Jwh" firstAttribute="bottom" secondItem="ndi-z9-Mtq" secondAttribute="bottom" id="agm-8z-Tda"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ndi-z9-Mtq" id="SRK-Cy-4KA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iu2-V5-OZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="850"/>
         </scene>
     </scenes>
 </document>
