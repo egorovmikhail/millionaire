@@ -31,7 +31,7 @@ class GameVC: UIViewController {
         questionButtonB.tag = 1
         questionButtonC.tag = 2
         questionButtonD.tag = 3
-        setButtonTitle()
+        updateView()
     }
     
     @IBAction func setQuestionButton(_ sender: UIButton) {
@@ -40,14 +40,14 @@ class GameVC: UIViewController {
             countCorrect += 1
             questionArray.count <= countCorrect ?
             gameDelegate?.game(self, didEndGameWiht: countCorrect) :
-            setButtonTitle()
+            updateView()
             
         } else {
             gameDelegate?.game(self, didEndGameWiht: countCorrect)
         }
     }
     
-    func setButtonTitle(){
+    func updateView(){
         let quest = questionArray[countCorrect]
         questionLabel.text = quest.question
         questionButtonA.setTitle(
@@ -60,6 +60,3 @@ class GameVC: UIViewController {
             quest.answer[3].name, for: .normal)
     }
 }
-
-
-

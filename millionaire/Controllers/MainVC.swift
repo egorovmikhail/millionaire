@@ -21,6 +21,10 @@ class MainVC: UIViewController {
 //            if segue.destination is ScoreVC {
 //
 //            }
+        case "SettingsVC":
+            if segue.destination is SettingsVC {
+
+            }
         default:
             break
         }

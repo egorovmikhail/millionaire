@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19134"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,6 +51,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zks-x2-oV7">
+                                <rect key="frame" x="354" y="54" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SLX-sZ-IrH"/>
+                                    <constraint firstAttribute="width" secondItem="zks-x2-oV7" secondAttribute="height" multiplier="1:1" id="TZL-1z-x0c"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <segue destination="HkM-kV-uG6" kind="presentation" identifier="SettingsVC" id="G4s-Uj-V0G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,6 +75,9 @@
                             <constraint firstItem="a1O-45-Qcl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qvr-Bf-65f"/>
                             <constraint firstItem="jNW-l6-rVT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RwU-wb-e3b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1O-45-Qcl" secondAttribute="trailing" constant="20" id="bms-hN-if5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zks-x2-oV7" secondAttribute="trailing" constant="20" id="gBC-X4-7SA"/>
+                            <constraint firstItem="zks-x2-oV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qVf-OS-gcD"/>
+                            <constraint firstItem="zks-x2-oV7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="yuV-7N-rVT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -181,5 +201,53 @@
             </objects>
             <point key="canvasLocation" x="1038" y="850"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="L3l-nr-biF">
+            <objects>
+                <viewController id="HkM-kV-uG6" customClass="SettingsVC" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OsY-q1-5Hc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8x-e7-qC9">
+                                <rect key="frame" x="16" y="50" width="382" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Вопросы в случайном порядке" translatesAutoresizingMaskIntoConstraints="NO" id="f9J-Qb-bgp">
+                                <rect key="frame" x="343" y="124.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы в случайном порядке" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fa-TN-C6x">
+                                <rect key="frame" x="20" y="111" width="245.5" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qlK-VJ-7Po"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7fa-TN-C6x" firstAttribute="leading" secondItem="qlK-VJ-7Po" secondAttribute="leading" constant="20" id="FGE-x5-C4w"/>
+                            <constraint firstItem="qlK-VJ-7Po" firstAttribute="trailing" secondItem="I8x-e7-qC9" secondAttribute="trailing" constant="16" id="FWO-XY-wHO"/>
+                            <constraint firstItem="qlK-VJ-7Po" firstAttribute="trailing" secondItem="f9J-Qb-bgp" secondAttribute="trailing" constant="22" id="Gjh-kv-RTY"/>
+                            <constraint firstItem="f9J-Qb-bgp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7fa-TN-C6x" secondAttribute="trailing" constant="8" symbolic="YES" id="H79-kw-SCZ"/>
+                            <constraint firstItem="7fa-TN-C6x" firstAttribute="top" secondItem="I8x-e7-qC9" secondAttribute="bottom" constant="24" id="LS5-GM-vbh"/>
+                            <constraint firstItem="f9J-Qb-bgp" firstAttribute="centerY" secondItem="7fa-TN-C6x" secondAttribute="centerY" id="QpO-GK-m7w"/>
+                            <constraint firstItem="I8x-e7-qC9" firstAttribute="leading" secondItem="OsY-q1-5Hc" secondAttribute="leading" constant="16" id="aiU-DN-PeY"/>
+                            <constraint firstItem="I8x-e7-qC9" firstAttribute="top" secondItem="qlK-VJ-7Po" secondAttribute="top" constant="50" id="e0w-m6-gHd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfU-lU-Cyu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="1624.5535714285713"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
